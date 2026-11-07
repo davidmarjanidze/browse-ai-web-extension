@@ -1,6 +1,6 @@
 {
   "name": "browse-ai",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "scripts": {
     "build:background": "tsc -p tsconfig.background.json",
     "prestart": "npm run build:background",
