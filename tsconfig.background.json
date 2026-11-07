@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "WebWorker"],
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["chrome"],
+    "ignoreDeprecations": "6.0",
+    "outDir": "public/background",
+    "rootDir": "src/background"
+  },
+  "include": ["src/background/*.ts"],
+  "exclude": ["src/background/*.spec.ts"]
+}

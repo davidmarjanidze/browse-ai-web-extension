@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          Arial, sans-serif;
+      }
+      body {
+        background-color: #000000;
+        color: #f1f5f9;
+        display: flex;
+        align-items: center;
+        padding: 40px 20px;
+        min-height: 100vh;
+      }
+      .form-container {
+        width: 100%;
+        max-width: 750px;
+        background-color: #0a0a0a;
+        border: 1px solid #222222;
+        border-radius: 12px;
+        padding: 36px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      }
+      .form-header {
+        margin-bottom: 28px;
+        border-bottom: 1px solid #222222;
+        padding-bottom: 16px;
+      }
+      .form-header h1 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+      .form-header p {
+        font-size: 13px;
+        color: #888888;
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .full-width {
+        grid-column: span 2;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      label {
+        font-size: 12px;
+        font-weight: 600;
+        color: #cccccc;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      input[type='text'],
+      input[type='email'],
+      input[type='tel'],
+      input[type='url'],
+      input[type='number'],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px 14px;
+        background-color: #121212;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        color: #ffffff;
+        font-size: 13.5px;
+        transition: all 0.2s ease;
+        outline: none;
+      }
+      input[type='text']:focus,
+      input[type='email']:focus,
+      input[type='tel']:focus,
+      input[type='url']:focus,
+      input[type='number']:focus,
+      select:focus,
+      textarea:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        background-color: #161616;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #555555;
+      }
+      select {
+        appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="%23888888" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+      }
+      select option {
+        background-color: #121212;
+        color: #ffffff;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+      fieldset {
+        border: 1px solid #222222;
+        border-radius: 8px;
+        padding: 14px 18px;
+        background-color: #121212;
+      }
+      legend {
+        font-size: 12px;
+        font-weight: 600;
+        color: #cccccc;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 0 6px;
+      }
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 10px;
+        margin-top: 6px;
+      }
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+      input[type='checkbox'] {
+        accent-color: #3b82f6;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+      }
+      .checkbox-group label {
+        font-size: 13.5px;
+        color: #dddddd;
+        text-transform: none;
+        letter-spacing: normal;
+        cursor: pointer;
+      }
+      .civil-status-container {
+        display: flex;
+        align-items: center;
+        height: 40px;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #3b82f6;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        margin-top: 8px;
+      }
+      .submit-btn:hover {
+        background-color: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Software Engineer Candidate Application</h1>
+        <p>Please complete the fields below to submit your application.</p>
+      </div>
+
+      <form action="#" method="POST" class="form-grid">
+        <!-- 1. Full Legal Name -->
+        <div class="form-group">
+          <label for="fullName">Full Legal Name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="e.g., Maeve Miller"
+            required
+          />
+        </div>
+
+        <!-- 2. Primary Email Address -->
+        <div class="form-group">
+          <label for="email">Primary Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="e.g., maeve.miller@example.com"
+            required
+          />
+        </div>
+
+        <!-- 3. Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="e.g., +1 (555) 019-2834"
+            required
+          />
+        </div>
+
+        <!-- 4. Current City & Country -->
+        <div class="form-group">
+          <label for="location">Current City & Country</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="e.g., Austin, TX, USA"
+            required
+          />
+        </div>
+
+        <!-- 5. LinkedIn Profile -->
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile</label>
+          <input
+            type="url"
+            id="linkedin"
+            name="linkedin"
+            placeholder="https://linkedin.com/in/maeve-miller"
+          />
+        </div>
+
+        <!-- 6. GitHub Profile -->
+        <div class="form-group">
+          <label for="github">GitHub Profile</label>
+          <input
+            type="url"
+            id="github"
+            name="github"
+            placeholder="https://github.com/maeve-miller"
+          />
+        </div>
+
+        <!-- 7. Target Engineering Role -->
+        <div class="form-group">
+          <label for="primaryRole">Target Engineering Role</label>
+          <select id="primaryRole" name="primaryRole" required>
+            <option value="" disabled selected>Select target role...</option>
+            <option value="fullstack">Senior Full-Stack Engineer</option>
+            <option value="frontend">Frontend Architect</option>
+            <option value="backend">Backend Systems Engineer</option>
+            <option value="cloud">AWS Cloud Architect</option>
+          </select>
+        </div>
+
+        <!-- 8. Years of Professional Experience -->
+        <div class="form-group">
+          <label for="experienceYears">Years of Professional Experience</label>
+          <input
+            type="number"
+            id="experienceYears"
+            name="experienceYears"
+            min="0"
+            max="40"
+            placeholder="e.g., 8"
+            required
+          />
+        </div>
+
+        <!-- 9. Desired Annual Base Salary (USD) -->
+        <div class="form-group">
+          <label for="desiredSalary">Desired Annual Base Salary (USD)</label>
+          <input
+            type="text"
+            id="desiredSalary"
+            name="desiredSalary"
+            placeholder="e.g., $160,000 - $180,000"
+          />
+        </div>
+
+        <!-- 10. Civil Status (Married Checkbox) -->
+        <div class="form-group">
+          <label>Civil Status</label>
+          <div class="civil-status-container">
+            <div class="checkbox-group">
+              <input
+                type="checkbox"
+                id="isMarried"
+                name="isMarried"
+                value="yes"
+              />
+              <label for="isMarried">Married</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Core Technical Competencies -->
+        <div class="form-group full-width">
+          <fieldset>
+            <legend>Core Technical Competencies</legend>
+            <div class="checkbox-grid">
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-angular"
+                  name="technologies[]"
+                  value="angular"
+                />
+                <label for="tech-angular">Angular</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-react"
+                  name="technologies[]"
+                  value="react"
+                />
+                <label for="tech-react">React</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-next"
+                  name="technologies[]"
+                  value="nextjs"
+                />
+                <label for="tech-next">Next.js</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-node"
+                  name="technologies[]"
+                  value="nodejs"
+                />
+                <label for="tech-node">Node.js / NestJS</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-python"
+                  name="technologies[]"
+                  value="python"
+                />
+                <label for="tech-python">Python</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-python"
+                  name="technologies[]"
+                  value="python"
+                />
+                <label for="tech-python">Go</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="tech-aws"
+                  name="technologies[]"
+                  value="aws"
+                />
+                <label for="tech-aws">AWS Architecture</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- 12. Professional Summary / Short Bio -->
+        <div class="form-group full-width">
+          <label for="professionalSummary"
+            >Professional Summary / Short Bio</label
+          >
+          <textarea
+            id="professionalSummary"
+            name="professionalSummary"
+            placeholder="Briefly detail your core expertise in enterprise cloud systems, scalability achievements, and technical leadership..."
+          ></textarea>
+        </div>
+
+        <!-- 13. Professional Cover Letter -->
+        <div class="form-group full-width">
+          <label for="coverLetter">Professional Cover Letter</label>
+          <textarea
+            id="coverLetter"
+            name="coverLetter"
+            placeholder="Explain why you are a strong technical fit for this engineering position..."
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group full-width">
+          <button type="submit" class="submit-btn">
+            Submit Candidate Application
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
