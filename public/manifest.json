@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "BrowseAI",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "On-device AI chat for any web page via Chrome's Gemini Nano. No cloud calls, no tracking — fully private and offline-capable.",
   "icons": {
     "16": "icons/icon-16.png",
